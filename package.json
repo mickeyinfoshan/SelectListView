@@ -1,0 +1,23 @@
+{
+  "name": "select-list-view",
+  "version": "0.0.1",
+  "description": "a list view component which can be used to select item",
+  "main": "SelectListView.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjhlybmwq/SelectListView.git"
+  },
+  "keywords": [
+    "ListView",
+    "select"
+  ],
+  "author": "Mickey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mjhlybmwq/SelectListView/issues"
+  },
+  "homepage": "https://github.com/mjhlybmwq/SelectListView#readme"
+}
