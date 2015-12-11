@@ -18,8 +18,6 @@ var SelectListView = React.createClass({
     itemHeight : PropTypes.number
   },
 
-  rows : [],
-
   _selectItem : function(offset) {
     var offsetY = offset.y;
     var containerHeight = this.props.style.height || height;
@@ -28,7 +26,7 @@ var SelectListView = React.createClass({
     var selectedRowIndex = Math.round((offsetY + innerOffset) / this.props.itemHeight);
     offsetY = selectedRowIndex * this.props.itemHeight - innerOffset;
     this.refs._component.getListView().getScrollResponder().scrollTo(offsetY);
-    this.props.onSelect && this.props.onSelect(this.rows[selectedRowIndex]);
+    this.props.onSelect && this.props.onSelect(selectedRowIndex);
   },
 
   renderRow : function(rowData, sectionID, rowID, highlightRow) {
@@ -38,8 +36,6 @@ var SelectListView = React.createClass({
       sectionID : sectionID,
       rowID : rowID
     };
-
-    this.rows.push(row);
 
     return this.props.renderRow(rowData, sectionID, rowID, highlightRow);
 
