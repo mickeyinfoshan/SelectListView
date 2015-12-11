@@ -1,5 +1,5 @@
 # SelectListView
-a list view component which can be used to select item 
+a list view component which can be used to select item
 
 ## Props
 
@@ -7,6 +7,6 @@ a list view component which can be used to select item
 
 ```
   itemHeight : number
-
-  onSelect : function(selectedRowData, sectionID, rowID)
+  defaultItemIndex : number
+  onSelect : function(selectedRowIndex)
 ```
