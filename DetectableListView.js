@@ -5,7 +5,7 @@ var {
 
 var ObjectAssign = require("object-assign");
 
-const DETECT_INTERVAL = 300;
+const DETECT_INTERVAL = 100;
 
 var DetectableListView = React.createClass({
 

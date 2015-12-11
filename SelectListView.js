@@ -15,7 +15,8 @@ var ObjectAssign = require("object-assign");
 var SelectListView = React.createClass({
 
   propTypes : {
-    itemHeight : PropTypes.number
+    itemHeight : PropTypes.number,
+    defaultItemIndex : PropTypes.number
   },
 
   _selectItem : function(offset) {
@@ -39,6 +40,20 @@ var SelectListView = React.createClass({
 
     return this.props.renderRow(rowData, sectionID, rowID, highlightRow);
 
+  },
+
+  componentDidMount: function() {
+    if(!this.props.defaultItemIndex) {
+      return;
+    }
+    setTimeout(function() {
+      var containerHeight = this.props.style.height || height;
+      var itemHeight = this.props.itemHeight;
+      var innerOffset = (containerHeight - itemHeight) / 2;
+      var offsetY = this.props.defaultItemIndex * this.props.itemHeight - innerOffset;
+      this.refs._component.getListView().getScrollResponder().scrollTo(offsetY);
+      this.props.onSelect && this.props.onSelect(this.props.defaultItemIndex);
+    }.bind(this), 200);
   },
 
 
